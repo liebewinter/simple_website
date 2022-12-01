@@ -12,17 +12,10 @@ app.get('/', (req, res) => {
   res.render('index')
 })
 
-app.get('/about', (req, res) => {
-  res.render('about')
+app.get('/:page', (req, res) => {
+  res.render(`${req.params.page}`)
 })
 
-app.get('/portfolio', (req, res) => {
-  res.render('portfolio')
-})
-
-app.get('/contact', (req, res) => {
-  res.render('contact')
-})
 
 app.listen(port, () => {
   console.log(`Express is listening on localhost:${port}`)
